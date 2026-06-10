@@ -1,0 +1,1689 @@
+/* ======================================================================
+   SHARING HOLIDAYS - LUXURY TRAVEL WEBSITE
+   CSS STYLESHEET WITH INDEX.PHP ELEMENT REFERENCE
+   
+   This file contains all styling for index.php
+   Each section clearly indicates which HTML element it styles
+   ====================================================================== */
+
+/* ======================================================================
+   [INDEX.PHP] - UNIVERSAL RESET & BASE STYLES
+   Applied to: All HTML elements
+   ====================================================================== */
+
+/* 
+   * SELECTOR: Universal selector applied to ALL elements
+   
+   WHAT IT DOES:
+   - margin: 0 → Removes default browser spacing around elements
+   - padding: 0 → Removes default internal spacing inside elements
+   - box-sizing: border-box → Makes width/height include padding & borders
+     (prevents layout breaks from padding additions)
+   
+   IMPORTANT: This runs FIRST before all other styles
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 
+   ELEMENT: <body> tag in index.php
+   
+   PROPERTIES:
+   - font-family: Professional sans-serif fonts for web readability
+     Priority: Segoe UI > Tahoma > Geneva > Verdana > generic sans-serif
+   - background-color: #f8f9fa (light gray) - Base page background
+   - line-height: 1.6 - Space between text lines for readability
+   - color: #333 - Default text color (dark gray)
+   
+   APPLIES TO: All text and content on the page
+*/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+
+/* ======================================================================
+   [INDEX.PHP] <header> ELEMENT
+   Selector: header
+   Location: Line 18 in index.php
+   ====================================================================== */
+
+/* 
+   ELEMENT: <header> tag - Main navigation header
+   
+   STYLING PURPOSE:
+   - Creates premium luxury appearance with dark gradient
+   - Makes header "sticky" so it stays visible when scrolling
+   - Elevates header above all other content (z-index)
+   
+   PROPERTIES BREAKDOWN:
+   
+   background: linear-gradient(135deg, #1a2a4a 0%, #0f1f3f 100%)
+   → Creates diagonal gradient from lighter navy to darker navy
+   → 135deg = direction (diagonal)
+   → #1a2a4a = starting color (top-left)
+   → #0f1f3f = ending color (bottom-right)
+   
+   color: white
+   → Makes all text white for contrast
+   
+   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3)
+   → Creates floating elevation effect
+   → 0 = horizontal offset (none)
+   → 8px = vertical offset (shadow below)
+   → 32px = blur distance (soft shadow)
+   → rgba(0,0,0,0.3) = semi-transparent black
+   
+   position: sticky
+   → Header stays at top when user scrolls
+   → Different from fixed - scrolls with content initially
+   
+   top: 0
+   → Positions sticky element at very top
+   
+   z-index: 1000
+   → Ensures header appears ABOVE everything else
+   → Higher number = more in front
+*/
+header {
+    background: linear-gradient(135deg, #1a2a4a 0%, #0f1f3f 100%);
+    color: white;
+    padding: 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* ======================================================================
+   [INDEX.PHP] <div class="header-container"> ELEMENT
+   Selector: .header-container
+   Location: Line 19 in index.php
+   Container for: logo, nav-menu, header-actions, hamburger
+   ====================================================================== */
+
+/* 
+   CLASS: .header-container - Main layout container inside header
+   
+   PURPOSE:
+   - Controls overall layout of header elements
+   - Ensures responsive behavior across all screen sizes
+   - Centers content and limits max width for large screens
+   
+   FLEXBOX LAYOUT BREAKDOWN:
+   
+   display: flex
+   → Uses flexbox for flexible, responsive layout
+   → Creates one-dimensional (row or column) layout
+   
+   justify-content: space-between
+   → Distributes items with SPACE BETWEEN them
+   → Logo on left, actions on right, menu in middle
+   
+   align-items: center
+   → Vertically centers all items in the flex container
+   
+   gap: 20px
+   → Creates consistent 20px spacing between flex items
+   
+   flex-wrap: wrap
+   → Allows items to wrap to next line on small screens
+   → Mobile menu goes below logo
+   
+   max-width: 1400px
+   → Prevents content from stretching too wide on huge screens
+   
+   margin: 0 auto
+   → Centers the container horizontally on page
+   → 0 = no top/bottom margin
+   → auto = left/right margins equal (centers it)
+   
+   padding: 0 20px
+   → Adds 20px spacing on left and right sides
+   → Prevents content from touching screen edge
+*/
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+
+/* ======================================================================
+   [INDEX.PHP] <a class="logo-section"> ELEMENT
+   Selector: .logo-section
+   Location: Line 21-30 in index.php
+   Contains: .logo-icon and .logo-text
+   ====================================================================== */
+
+/* 
+   CLASS: .logo-section - Logo link and container
+   
+   PURPOSE:
+   - Clickable logo area that links to home
+   - Combines icon and text in horizontal layout
+   - Adds hover effect for interactivity
+   
+   KEY PROPERTIES:
+   
+   display: flex
+   → Horizontal layout for icon + text
+   
+   align-items: center
+   → Vertically aligns icon and text in middle
+   
+   gap: 15px
+   → Space between icon and text elements
+   
+   text-decoration: none
+   → Removes default underline from link
+   
+   color: white
+   → Makes text white (inherited to children)
+   
+   flex-shrink: 0
+   → Prevents logo from shrinking on small screens
+   → Keeps logo at full size always
+   
+   transition: transform 0.3s ease
+   → Smooth animation for hover effect
+   → Takes 0.3 seconds to complete
+*/
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    text-decoration: none;
+    color: white;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.logo-section:hover {
+    transform: scale(1.05);
+}
+
+/* ======================================================================
+   [INDEX.PHP] <div class="logo-icon"> ELEMENT
+   Selector: .logo-icon
+   Location: Line 22-24 in index.php
+   Contains: <i class="fas fa-globe"></i>
+   ====================================================================== */
+
+/* 
+   CLASS: .logo-icon - Circular gold icon with globe symbol
+   
+   PURPOSE:
+   - Creates premium circular badge for travel icon
+   - Eye-catching focal point of logo
+   - Adds luxury feel with gold gradient
+   
+   CIRCULAR DESIGN:
+   
+   width: 50px; height: 50px
+   → Creates perfect square (50x50 pixels)
+   
+   border-radius: 50%
+   → Makes square into perfect circle
+   → 50% of width/height = circle shape
+   
+   GRADIENT BACKGROUND:
+   
+   background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%)
+   → Gold gradient from matte (#d4af37) to bright (#f4d03f)
+   → Creates luxurious shiny effect
+   
+   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4)
+   → Creates glowing effect around icon
+   → Makes icon appear elevated
+   
+   ICON CENTERING:
+   
+   display: flex
+   align-items: center
+   justify-content: center
+   → Centers the globe icon perfectly inside circle
+   
+   font-size: 28px
+   → Size of globe icon (large but fits in circle)
+   
+   color: #1a2a4a
+   → Icon color (dark navy for contrast against gold)
+*/
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: #1a2a4a;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    flex-shrink: 0;
+}
+
+/* ======================================================================
+   [INDEX.PHP] <div class="logo-text"> ELEMENT
+   Selector: .logo-text (and children h1, p)
+   Location: Line 25-29 in index.php
+   Contains: <h1>SH</h1> and <p>EXPLORE WORLD</p>
+   ====================================================================== */
+
+/* 
+   ELEMENT: .logo-text h1
+   Contains: "SH" text from index.php line 27
+   
+   PURPOSE: Main brand name/title
+   
+   STYLING:
+   - font-size: 24px → Large, prominent size
+   - font-weight: 700 → Bold weight (thick letters)
+   - letter-spacing: 0.5px → Slight space between letters
+   - margin: 0 → Remove default h1 margins
+*/
+.logo-text h1 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+/* 
+   ELEMENT: .logo-text p
+   Contains: "EXPLORE WORLD" text from index.php line 28
+   
+   PURPOSE: Tagline below main logo
+   
+   STYLING:
+   - font-size: 11px → Small, subtle text
+   - color: #d4af37 → Gold color (luxury accent)
+   - letter-spacing: 1px → Wide spacing for elegant look
+   - font-weight: 500 → Medium weight
+   - margin: 2px 0 0 0 → Small top margin, no others
+*/
+.logo-text p {
+    font-size: 11px;
+    color: #d4af37;
+    margin: 2px 0 0 0;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+
+
+/* ======================================================================
+   [INDEX.PHP] <nav class="nav-menu" id="navMenu"> ELEMENT
+   Selector: .nav-menu
+   Location: Line 32-41 in index.php
+   Contains: 8 navigation links
+   ====================================================================== */
+
+/* 
+   CLASS: .nav-menu - Navigation menu container
+   
+   PURPOSE:
+   - Horizontal layout for navigation links
+   - Centers menu in header
+   - Creates responsive menu that becomes dropdown on mobile
+   
+   LAYOUT SETUP:
+   
+   display: flex
+   → Creates horizontal row of links
+   
+   gap: 30px
+   → 30px space between each link
+   
+   justify-content: center
+   → Centers all links in middle of header
+   
+   flex: 1
+   → Takes up all available space in middle
+   → Pushes logo left and actions right
+   
+   list-style: none
+   → Removes bullet points (this isn't a list)
+   
+   margin: 0
+   → Removes default list margins
+*/
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    list-style: none;
+    flex: 1;
+    justify-content: center;
+    margin: 0;
+}
+
+/* ======================================================================
+   [INDEX.PHP] Navigation Links <a> inside nav-menu
+   Selector: .nav-menu a
+   Location: Lines 33-40 in index.php
+   Links: Home, Flights, Hotels, Visa Services, etc.
+   ====================================================================== */
+
+/* 
+   ELEMENT: .nav-menu a - Individual navigation links
+   
+   PURPOSE:
+   - Style navigation links
+   - Add hover effect with underline animation
+   - Create luxury feel with subtle transitions
+   
+   LINK STYLING:
+   
+   color: white
+   → White text on dark background
+   
+   text-decoration: none
+   → Removes default link underline
+   
+   font-size: 14px
+   → Readable but not too large
+   
+   font-weight: 500
+   → Medium weight (slightly bold)
+   
+   position: relative
+   → Allows ::after pseudo-element to position relative to this
+   
+   transition: color 0.3s ease
+   → Smooth color change on hover
+   → Takes 0.3 seconds
+   
+   letter-spacing: 0.3px
+   → Slight letter spacing for elegance
+*/
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.nav-menu a:hover {
+    color: #d4af37;
+}
+
+/* 
+   PSEUDO-ELEMENT: .nav-menu a::after
+   
+   PURPOSE:
+   - Creates invisible underline that animates on hover
+   - Adds premium animation effect
+   
+   HOW IT WORKS:
+   
+   content: ''
+   → Creates empty pseudo-element (just for decoration)
+   
+   position: absolute
+   bottom: -5px
+   left: 0
+   → Positions line below the text
+   → -5px moves it 5 pixels down from link
+   
+   width: 0
+   height: 2px
+   → Starts as invisible (width: 0)
+   → 2px tall
+   
+   background: linear-gradient(90deg, #d4af37 0%, #f4d03f 100%)
+   → Gold gradient for underline
+   
+   transition: width 0.3s ease
+   → Animates width change smoothly
+*/
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #d4af37 0%, #f4d03f 100%);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+
+
+/* ======================================================================
+   [INDEX.PHP] <div class="header-actions"> ELEMENT
+   Selector: .header-actions
+   Location: Line 44-46 in index.php (Updated)
+   Contains: login-btn only (language & whatsapp removed)
+   ====================================================================== */
+
+/* 
+   CLASS: .header-actions - Right side action buttons container
+   
+   PURPOSE:
+   - Now contains only login button
+   - Creates horizontal layout for these elements
+   - Keeps them aligned on right side of header
+   
+   PROPERTIES:
+   
+   display: flex
+   → Horizontal layout for buttons
+   
+   align-items: center
+   → Vertically centers all buttons
+   
+   gap: 20px
+   → 20px space between each button
+   
+   flex-shrink: 0
+   → Prevents container from shrinking on mobile
+   → Keeps buttons visible
+*/
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+/* ======================================================================
+   [INDEX.PHP] <a class="login-btn"> ELEMENT
+   Selector: .login-btn
+   Location: Line 56-57 in index.php
+   Text: "Login / Sign Up"
+   ====================================================================== */
+
+/* 
+   CLASS: .login-btn - Login/Sign Up button
+   
+   PURPOSE:
+   - Premium button for user authentication
+   - Gold color scheme for luxury feel
+   - Hover effect with shadow and lift
+   
+   BUTTON STYLING:
+   
+   background-color: #d4af37
+   color: #1a2a4a
+   → Gold background with dark navy text for contrast
+   
+   padding: 10px 25px
+   → 10px top/bottom, 25px left/right (button size)
+   
+   border: none
+   → Removes default border
+   
+   border-radius: 5px
+   → Slightly rounded corners
+   
+   cursor: pointer
+   → Shows it's clickable
+   
+   font-weight: 600
+   font-size: 13px
+   → Bold, readable text
+   
+   text-decoration: none
+   display: inline-block
+   white-space: nowrap
+   → Ensures text doesn't wrap to multiple lines
+   
+   HOVER EFFECT:
+   
+   transform: translateY(-2px)
+   → Button moves up 2 pixels (lifts on hover)
+   
+   box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4)
+   → Gold shadow under button
+*/
+.login-btn {
+    background-color: #d4af37;
+    color: #1a2a4a;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.login-btn:hover {
+    background-color: #f4d03f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+
+
+/* ======================================================================
+   [INDEX.PHP] <div class="toggle-bar" id="toggleBar"> ELEMENT
+   Selector: .toggle-bar
+   Location: After <header> in index.php
+   Contains: 2 <span> elements (indicator, label)
+   ====================================================================== */
+
+/* 
+   CLASS: .toggle-bar - Visual menu indicator for ultra-small devices
+   
+   PURPOSE:
+   - Shows menu status on devices 360px and below (iPhone SE, old phones)
+   - Provides visual feedback for mobile menu state
+   - Golden bar with animated indicator
+   
+   PROPERTIES:
+   
+   position: fixed
+   → Stays at top of screen when scrolling
+   
+   top: 0, left: 0, right: 0
+   → Spans full width at top of viewport
+   
+   height: 50px
+   → Fixed height for the bar
+   
+   background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%)
+   → Golden gradient (default closed state)
+   
+   z-index: 998
+   → Below header (z-index 1000) but above content
+   
+   display: none
+   → Hidden by default, shown only on 360px media query
+*/
+.toggle-bar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+    color: #1a2a4a;
+    font-weight: 700;
+    font-size: 13px;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    z-index: 998;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    letter-spacing: 1px;
+    padding: 0 1rem;
+}
+
+/* 
+   CLASS: .toggle-indicator - Menu indicator icon (☰)
+   
+   ANIMATION: Bounces up and down (show menu is interactive)
+*/
+.toggle-indicator {
+    font-size: 16px;
+    display: inline-block;
+    animation: bounce 0.6s ease-in-out;
+}
+
+/* 
+   CLASS: .toggle-bar.menu-open - Active state
+   
+   WHEN: Menu is opened on small devices
+   
+   CHANGES:
+   - Background becomes dark navy (matches open menu)
+   - Text becomes gold (matches open menu state)
+   - Indicator rotates 180deg
+*/
+.toggle-bar.menu-open {
+    background: linear-gradient(135deg, #1a2a4a 0%, #0f1f3f 100%);
+    color: #d4af37;
+}
+
+.toggle-bar.menu-open .toggle-indicator {
+    animation: rotate 0.3s ease-out;
+}
+
+/* 
+   ANIMATION: bounce
+   
+   Effect: Toggle indicator bounces up/down continuously
+   - 0% (start): Normal position
+   - 50% (middle): 3px higher (translateY(-3px))
+   - 100% (end): Back to normal
+   
+   Duration: 0.6s
+   Timing: ease-in-out (smooth acceleration/deceleration)
+*/
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+/* 
+   ANIMATION: rotate
+   
+   Effect: Indicator rotates 180 degrees when menu opens
+   - from: 0deg (normal)
+   - to: 180deg (rotated)
+   
+   Duration: 0.3s
+   Timing: ease-out (quick start, gradual finish)
+*/
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+/* ======================================================================
+   [INDEX.PHP] <div class="hamburger" id="hamburger"> ELEMENT
+   Selector: .hamburger
+   Location: Line 60-64 in index.php
+   Contains: 3 <span> elements (lines)
+   ====================================================================== */
+
+/* 
+   CLASS: .hamburger - Mobile menu toggle button
+   
+   PURPOSE:
+   - Creates three-line "hamburger" icon for mobile
+   - Hidden on desktop, shown on tablets/phones
+   - Animates to X shape when clicked
+   
+   SETUP:
+   
+   display: none
+   → Hidden by default (shown only on mobile via media query)
+   
+   flex-direction: column
+   → Stacks the three lines vertically
+   
+   cursor: pointer
+   → Shows this is clickable
+   
+   gap: 6px
+   → 6px space between hamburger lines
+   
+   flex-shrink: 0
+   → Prevents hamburger from shrinking
+*/
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+/* 
+   ELEMENT: .hamburger span (individual lines)
+   
+   PURPOSE:
+   - Creates three horizontal lines of hamburger menu
+   - Each span is one line
+   
+   STYLING:
+   
+   width: 25px; height: 3px
+   → Creates horizontal line (25px wide, 3px tall)
+   
+   background-color: #d4af37
+   → Gold color matching theme
+   
+   border-radius: 2px
+   → Slightly rounded line ends
+   
+   transition: all 0.3s ease
+   → Smooth animation when transforming to X
+*/
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #d4af37;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* 
+   ANIMATION: .hamburger.active (when menu is opened)
+   
+   PURPOSE:
+   - Transforms three lines into X shape
+   - Visual feedback that menu is open
+   
+   HOW IT WORKS (triggered by JavaScript):
+   
+   span:nth-child(1) - First line
+   → rotate(45deg) - Rotates 45 degrees
+   → translate(10px, 10px) - Moves position to form top of X
+   
+   span:nth-child(2) - Middle line
+   → opacity: 0 - Completely invisible (disappears)
+   
+   span:nth-child(3) - Third line
+   → rotate(-45deg) - Rotates -45 degrees (opposite direction)
+   → translate(8px, -8px) - Moves to form bottom of X
+*/
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+
+
+/* ======================================================================
+   [INDEX.PHP] <section class="hero-section" id="home"> ELEMENT
+   Selector: .hero-section
+   Location: Line 67-71 in index.php
+   Contains: <h2>, <p>, <a class="cta-button">
+   ====================================================================== */
+
+/* 
+   ELEMENT: .hero-section - Main banner/hero image area
+   
+   PURPOSE:
+   - Large eye-catching banner at top of page
+   - Background image with overlay
+   - Call-to-action section
+   
+   BACKGROUND SETUP:
+   
+   background: [gradient], [image]
+   → Two-layer background:
+      1. Gradient overlay (semi-transparent dark)
+      2. Travel image behind it
+   
+   linear-gradient(135deg, rgba(26,42,74,0.8) 0%, rgba(15,31,63,0.8) 100%)
+   → Dark overlay that darkens the image behind
+   → rgba(..., 0.8) = 80% opaque (20% transparent)
+   → Allows image to show through while darkening it
+   
+   url('https://images.unsplash.com/photo-...')
+   → External travel image from Unsplash
+   → center/cover = image centered and covers entire area
+   
+   LAYOUT:
+   
+   display: flex
+   flex-direction: column
+   justify-content: center
+   align-items: center
+   → Centers all content (h2, p, button) vertically and horizontally
+   
+   color: white
+   text-align: center
+   → White text, centered alignment
+   
+   padding: 100px 20px
+   → Large padding (100px top/bottom, 20px left/right)
+   
+   min-height: 500px
+   → Minimum height of 500px (can be taller based on content)
+*/
+.hero-section {
+    background: linear-gradient(135deg, rgba(26, 42, 74, 0.8) 0%, rgba(15, 31, 63, 0.8) 100%),
+                url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&h=600&fit=crop') center/cover;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 
+   ELEMENT: .hero-section h2
+   Contains: "Discover Your Next Adventure" from index.php line 69
+   
+   STYLING:
+   - font-size: 48px → Very large, dramatic heading
+   - font-weight: 700 → Bold
+   - margin-bottom: 20px → Space below heading
+   - text-shadow: 2px 2px 4px rgba(0,0,0,0.5) → Shadow behind text for readability
+*/
+.hero-section h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* 
+   ELEMENT: .hero-section p
+   Contains: "Experience luxury travel with confidence and style" from index.php line 70
+   
+   STYLING:
+   - font-size: 20px → Large, readable
+   - color: #d4af37 → Gold accent color
+   - margin-bottom: 30px → Space below paragraph
+   - text-shadow: Similar to h2 for readability
+*/
+.hero-section p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #d4af37;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* ======================================================================
+   [INDEX.PHP] <a class="cta-button"> ELEMENT
+   Selector: .cta-button
+   Location: Line 71 in index.php
+   Text: "Explore Now"
+   ====================================================================== */
+
+/* 
+   CLASS: .cta-button - Call-to-action button in hero section
+   
+   PURPOSE:
+   - Primary action button encouraging user to explore
+   - Styled consistently with login button
+   - Premium hover effects
+   
+   STYLING:
+   
+   display: inline-block
+   → Button behaves like text but can have width/height
+   
+   background-color: #d4af37
+   color: #1a2a4a
+   → Gold background, dark text
+   
+   padding: 15px 40px
+   → Generous padding for large button
+   → 15px top/bottom, 40px left/right
+   
+   border-radius: 5px
+   → Slightly rounded corners
+   
+   font-weight: 600
+   font-size: 16px
+   → Bold, large, readable text
+   
+   HOVER EFFECT:
+   
+   transform: translateY(-3px)
+   → Lifts button 3px up on hover
+   
+   box-shadow: 0 8px 25px rgba(212,175,55,0.4)
+   → Large gold shadow for elevation effect
+*/
+.cta-button {
+    display: inline-block;
+    background-color: #d4af37;
+    color: #1a2a4a;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background-color: #f4d03f;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+
+
+/* ======================================================================
+   [INDEX.PHP] <div class="floating-whatsapp" id="floatingWhatsapp"> ELEMENT
+   Selector: .floating-whatsapp
+   Location: Before closing </body> tag in index.php
+   Contains: WhatsApp link with icon
+   ====================================================================== */
+
+/* 
+   CLASS: .floating-whatsapp - Fixed floating button in bottom-right corner
+   
+   PURPOSE:
+   - Permanently visible WhatsApp button on bottom-right
+   - Always accessible to users while browsing
+   - Premium animation effects on load and hover
+   
+   POSITIONING:
+   
+   position: fixed
+   → Stays in place even when scrolling
+   → Not affected by page scroll
+   
+   bottom: 30px; right: 30px
+   → 30px from bottom and right edges
+   → Visible in corner of screen
+   
+   z-index: 999
+   → Always appears above page content
+   → Below header (z-index: 1000)
+   
+   BUTTON STYLING:
+   
+   display: flex
+   align-items: center
+   justify-content: center
+   → Centers icon inside button
+   
+   ANIMATION:
+   
+   animation: floatIn 0.6s ease-out
+   → Smooth entrance animation when page loads
+   → Takes 0.6 seconds to complete
+*/
+.floating-whatsapp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+}
+
+/* 
+   NESTED ELEMENT: .floating-whatsapp a - WhatsApp link inside floating button
+   
+   PURPOSE:
+   - Clickable WhatsApp link
+   - Premium styled circular button
+   - Responds to hover with animations
+   
+   STYLING:
+   
+   width: 60px; height: 60px
+   → Creates 60x60px square (larger than header version)
+   
+   background: linear-gradient(135deg, #25d366 0%, #20c997 100%)
+   → Green gradient from WhatsApp green to teal
+   → Creates modern, premium look
+   
+   border-radius: 50%
+   → Makes square into perfect circle
+   
+   display: flex
+   align-items: center
+   justify-content: center
+   → Centers WhatsApp icon perfectly
+   
+   font-size: 32px
+   → Large icon
+   
+   color: white
+   → White icon for contrast
+   
+   text-decoration: none
+   → Removes link underline
+   
+   cursor: pointer
+   → Shows it's clickable
+   
+   box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35)
+   → Strong shadow for elevation
+   
+   ANIMATION ON LOAD:
+   
+   animation: floatInButton 0.7s ease-out
+   → Entrance animation
+*/
+.floating-whatsapp a {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25d366 0%, #20c997 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: floatInButton 0.7s ease-out;
+}
+
+/* 
+   HOVER EFFECT: .floating-whatsapp a:hover
+   
+   PURPOSE:
+   - Premium animation on mouse hover
+   - React-style elevation and scale effects
+   
+   ANIMATIONS:
+   
+   transform: scale(1.12) translateY(-5px)
+   → Grows 12% larger
+   → Moves 5px up for floating effect
+   
+   box-shadow: 0 15px 45px rgba(37, 211, 102, 0.5)
+   → Larger shadow for greater elevation
+   → More visible glow effect
+*/
+.floating-whatsapp a:hover {
+    transform: scale(1.12) translateY(-5px);
+    box-shadow: 0 15px 45px rgba(37, 211, 102, 0.5);
+    animation: pulse-glow 1.2s ease-in-out infinite;
+}
+
+/* 
+   ACTIVE STATE: .floating-whatsapp a:active
+   
+   PURPOSE:
+   - Visual feedback when user clicks button
+   
+   EFFECT:
+   
+   transform: scale(0.95)
+   → Shrinks slightly when pressed (press-down effect)
+*/
+.floating-whatsapp a:active {
+    transform: scale(0.95);
+}
+
+/* 
+   RESPONSIVE: Mobile and Tablet Adjustments
+   - Button remains visible on all screen sizes
+   - Slightly smaller on small screens for better mobile UX
+*/
+@media (max-width: 768px) {
+    .floating-whatsapp {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .floating-whatsapp a {
+        width: 55px;
+        height: 55px;
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-whatsapp {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .floating-whatsapp a {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+}
+
+
+   Applied to: All elements when screen width ≤ 768px
+   ====================================================================== */
+
+@media (max-width: 768px) {
+    /* Header adjusts for smaller screens */
+    .header-container {
+        flex-wrap: wrap;
+        padding: 10px 15px;
+    }
+
+    /* Hamburger menu becomes visible on tablets */
+    .hamburger {
+        display: flex;
+        order: 3;
+    }
+
+    /* Navigation menu becomes dropdown instead of horizontal */
+    .nav-menu {
+        order: 4;
+        flex-basis: 100%;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        background-color: rgba(15, 31, 63, 0.95);
+        border-top: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    /* When menu is active (clicked), show full height */
+    .nav-menu.active {
+        max-height: 400px;
+    }
+
+    .nav-menu a {
+        font-size: 15px;
+        padding: 8px 0;
+    }
+
+    /* Shrink logo on tablets */
+    .logo-section {
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+    }
+
+    .logo-text h1 {
+        font-size: 18px;
+    }
+
+    .logo-text p {
+        font-size: 9px;
+    }
+
+    /* Actions stack below header on tablets */
+    .header-actions {
+        order: 5;
+        flex-basis: 100%;
+        gap: 10px;
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .login-btn {
+        padding: 8px 20px;
+        font-size: 12px;
+        flex: 1;
+        min-width: 120px;
+    }
+
+    .language-selector {
+        padding: 8px 12px;
+        font-size: 11px;
+    }
+
+    .whatsapp-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+
+    /* Hero section reduces in height */
+    .hero-section {
+        padding: 60px 20px;
+        min-height: 350px;
+    }
+
+    .hero-section h2 {
+        font-size: 32px;
+    }
+
+    .hero-section p {
+        font-size: 16px;
+    }
+
+    .cta-button {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+}
+
+/* ======================================================================
+   RESPONSIVE DESIGN - SMALL PHONES (480px and below)
+   Applied to: All elements when screen width ≤ 480px
+   ====================================================================== */
+
+@media (max-width: 480px) {
+    /* Very compact header */
+    .header-container {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    /* Further shrink logo text */
+    .logo-text h1 {
+        font-size: 16px;
+    }
+
+    .logo-text p {
+        font-size: 8px;
+        display: none;
+    }
+
+    .logo-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+
+    .logo-section {
+        gap: 8px;
+    }
+
+    /* Compact action buttons */
+    .header-actions {
+        gap: 8px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .login-btn {
+        padding: 7px 15px;
+        font-size: 11px;
+        flex: 1;
+    }
+
+    .language-selector {
+        padding: 7px 10px;
+        font-size: 10px;
+    }
+
+    .whatsapp-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+
+    /* Further reduce hero section */
+    .hero-section {
+        padding: 40px 15px;
+        min-height: 280px;
+    }
+
+    .hero-section h2 {
+        font-size: 24px;
+    }
+
+    .hero-section p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .cta-button {
+        padding: 10px 25px;
+        font-size: 12px;
+    }
+}
+
+/* ======================================================================
+   RESPONSIVE DESIGN - EXTRA SMALL DEVICES (360px and below)
+   Applied to: Very old/small phones
+   ====================================================================== */
+
+@media (max-width: 360px) {
+    /* Show toggle bar on ultra-small devices */
+    .toggle-bar {
+        display: flex !important;
+    }
+
+    /* Add padding-top to body to accommodate fixed toggle bar */
+    body {
+        padding-top: 50px;
+    }
+
+    .header-container {
+        padding: 8px;
+    }
+
+    .logo-text h1 {
+        font-size: 14px;
+    }
+
+    .logo-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+
+    .nav-menu {
+        gap: 10px;
+        padding: 15px 0;
+    }
+
+    .nav-menu a {
+        font-size: 13px;
+    }
+
+    .hamburger span {
+        width: 20px;
+        height: 2px;
+    }
+
+    .login-btn {
+        padding: 6px 12px;
+        font-size: 10px;
+    }
+
+    .hero-section h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .cta-button {
+        padding: 8px 20px;
+        font-size: 11px;
+    }
+}
+
+/* ======================================================================
+   RESPONSIVE DESIGN - LARGE DESKTOP (1200px and above)
+   Applied to: Large monitors and high-resolution screens
+   ====================================================================== */
+
+@media (min-width: 1200px) {
+    /* Increase spacing on large screens */
+    .header-container {
+        padding: 0 40px;
+    }
+
+    .nav-menu {
+        gap: 40px;
+    }
+
+    .nav-menu a {
+        font-size: 15px;
+    }
+
+    .logo-text h1 {
+        font-size: 26px;
+    }
+
+    /* Larger hero section */
+    .hero-section {
+        min-height: 600px;
+        padding: 120px 40px;
+    }
+
+    .hero-section h2 {
+        font-size: 56px;
+        margin-bottom: 25px;
+    }
+
+    .hero-section p {
+        font-size: 22px;
+        margin-bottom: 35px;
+    }
+
+    .cta-button {
+        padding: 18px 50px;
+        font-size: 18px;
+    }
+}
+
+
+
+/* ======================================================================
+   ACCESSIBILITY - FOCUS STATES FOR KEYBOARD USERS
+   Applied to: When user navigates with Tab key
+   ====================================================================== */
+
+.nav-menu a:focus,
+.login-btn:focus,
+.language-selector:focus,
+.whatsapp-icon:focus {
+    outline: 2px solid #d4af37;
+    outline-offset: 2px;
+    border-radius: 3px;
+}
+
+/* ======================================================================
+   ANIMATIONS - FADE IN EFFECT & FLOATING BUTTON ANIMATIONS
+   Applied to: Page load and floating button interactions
+   ====================================================================== */
+
+/* 
+   ANIMATION: fadeIn
+   
+   PURPOSE:
+   - Smooth entrance when page loads
+   - Fades in from invisible to visible
+   - Slides up slightly for dynamic effect
+   
+   KEYFRAMES:
+   - from: opacity 0 (invisible), translateY 20px (below)
+   - to: opacity 1 (visible), translateY 0 (normal position)
+*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 
+   ANIMATION: floatInButton
+   
+   PURPOSE:
+   - Entrance animation for floating WhatsApp button
+   - Similar to React Framer Motion spring animations
+   - Combines scale and opacity for premium effect
+   
+   KEYFRAMES:
+   - 0%: Scale 0 (invisible), opacity 0
+   - 50%: Scale 1.1 (slightly larger), opacity 1
+   - 100%: Scale 1 (normal), opacity 1
+   
+   EFFECT: Button grows in from center while becoming visible
+*/
+@keyframes floatInButton {
+    0% {
+        opacity: 0;
+        transform: scale(0) translateY(40px);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1) translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* 
+   ANIMATION: pulse-glow
+   
+   PURPOSE:
+   - Pulsing glow effect on hover
+   - Similar to Material Design elevation
+   - Box shadow expands and contracts
+   
+   KEYFRAMES:
+   - 0%: Box shadow normal
+   - 50%: Box shadow larger
+   - 100%: Box shadow back to normal
+   
+   EFFECT: Creates breathing/pulsing appearance
+*/
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35);
+    }
+    50% {
+        box-shadow: 0 15px 50px rgba(37, 211, 102, 0.5);
+    }
+    100% {
+        box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35);
+    }
+}
+
+/* 
+   ANIMATION: bounce
+   
+   PURPOSE:
+   - Bounce animation (like React spring)
+   - Makes element bounce up and down
+   - Good for attention-grabbing
+   
+   KEYFRAMES:
+   - 0%: Normal position
+   - 50%: Move up (bounce)
+   - 100%: Back to normal
+*/
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* 
+   ANIMATION: swing
+   
+   PURPOSE:
+   - Swing/rock animation (like React Framer Motion)
+   - Gentle side-to-side movement
+   - Creates playful, dynamic feel
+*/
+@keyframes swing {
+    0% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(3deg);
+    }
+}
+
+/* 
+   ANIMATION: wobble
+   
+   PURPOSE:
+   - Wobble/shake animation
+   - Attention-grabbing effect
+   - Like notification alerts
+*/
+@keyframes wobble {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* 
+   ANIMATION: slideInRight
+   
+   PURPOSE:
+   - Slide in from right side
+   - React Framer Motion style entrance
+   - Perfect for side notifications
+*/
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 
+   ANIMATION: rotateIn
+   
+   PURPOSE:
+   - Rotate while appearing
+   - Premium entrance effect
+   - Modern animation library style
+*/
+@keyframes rotateIn {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0) scale(1);
+    }
+}
+
+header {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.hero-section {
+    animation: fadeIn 0.7s ease-out 0.2s backwards;
+}
+
+/* ======================================================================
+   PRINT STYLES - FOR PRINTING PAGE
+   Applied to: When user prints page (Ctrl+P)
+   ====================================================================== */
+
+@media print {
+    header {
+        position: static;
+    }
+
+    .hero-section {
+        page-break-after: always;
+    }
+}
+
+/* ======================================================================
+   UTILITY CLASSES - HELPER STYLES
+   ====================================================================== */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}

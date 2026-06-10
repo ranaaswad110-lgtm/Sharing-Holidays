@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the world with confidence - Premium travel services for flights, hotels, visa assistance, and holiday packages">
+    <meta name="keywords" content="travel, holidays, flights, hotels, visa services, destinations">
+    <meta name="theme-color" content="#1a2a4a">
+    <title>SH - Explore the World with Confidence</title>
+    
+    <!-- Font Awesome Icons - Async Loading -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous">
+    
+    <!-- Responsive CSS File -->
+    <link rel="stylesheet" href="assets/css/style-responsive.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header role="banner">
+        <div class="header-container">
+            <!-- Logo Section -->
+            <a href="#home" class="logo-section" title="Sharing Holidays - Home">
+                <div class="logo-icon" aria-label="Sharing Holidays Logo">
+                    <i class="fas fa-globe" aria-hidden="true"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>SH</h1>
+                    <p>EXPLORE WORLD</p>
+                </div>
+            </a>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#flights" class="nav-link">Flights</a>
+                <a href="#hotels" class="nav-link">Hotels</a>
+                <a href="#visa" class="nav-link">Visa Services</a>
+                <a href="#packages" class="nav-link">Holiday Packages</a>
+                <a href="#destinations" class="nav-link">Destinations</a>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#contact" class="nav-link">Contact Us</a>
+            </nav>
+
+            <!-- Right Side Actions -->
+            <div class="header-actions">
+                <a href="#login" class="login-btn" id="loginBtn">Login / Sign Up</a>
+            </div>
+
+            <!-- Hamburger Menu Toggle -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="home" aria-label="Hero banner">
+            <div class="hero-content">
+                <h1>Discover Your Next Adventure</h1>
+                <p>Experience luxury travel with confidence and style</p>
+                <a href="#packages" class="cta-button">Explore Now</a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section" id="flights" aria-labelledby="services-title">
+            <div class="section-container">
+                <h2 id="services-title">Our Premium Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon" aria-hidden="true">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <h3>Flights</h3>
+                        <p>Book flights to your dream destinations with exclusive deals and premium service</p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon" aria-hidden="true">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <h3>Hotels</h3>
+                        <p>Stay in luxury accommodations handpicked for comfort and style</p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon" aria-hidden="true">
+                            <i class="fas fa-passport"></i>
+                        </div>
+                        <h3>Visa Services</h3>
+                        <p>Hassle-free visa processing for all major destinations worldwide</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Holiday Packages Section -->
+        <section class="packages-section" id="packages" aria-labelledby="packages-title">
+            <div class="section-container">
+                <h2 id="packages-title">Featured Holiday Packages</h2>
+                <div class="packages-grid">
+                    <div class="package-card">
+                        <div class="package-image"></div>
+                        <div class="package-content">
+                            <h3>European Luxury Tour</h3>
+                            <p class="price">From <span>$2,499</span></p>
+                            <p>Experience the best of Europe with 10-day curated itinerary</p>
+                            <a href="#" class="package-btn">Explore Package</a>
+                        </div>
+                    </div>
+
+                    <div class="package-card">
+                        <div class="package-image"></div>
+                        <div class="package-content">
+                            <h3>Asian Adventure</h3>
+                            <p class="price">From <span>$1,899</span></p>
+                            <p>Discover exotic cultures and breathtaking landscapes across Asia</p>
+                            <a href="#" class="package-btn">Explore Package</a>
+                        </div>
+                    </div>
+
+                    <div class="package-card">
+                        <div class="package-image"></div>
+                        <div class="package-content">
+                            <h3>Caribbean Paradise</h3>
+                            <p class="price">From <span>$1,599</span></p>
+                            <p>Relax on pristine beaches and enjoy tropical island living</p>
+                            <a href="#" class="package-btn">Explore Package</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Destinations Section -->
+        <section class="destinations-section" id="destinations" aria-labelledby="destinations-title">
+            <div class="section-container">
+                <h2 id="destinations-title">Popular Destinations</h2>
+                <div class="destinations-grid">
+                    <article class="destination-card">
+                        <div class="destination-image" style="background: url('https://images.unsplash.com/photo-1504681869696-d977bda34cb6?w=500&h=300&fit=crop') center/cover no-repeat;"></div>
+                        <div class="destination-content">
+                            <h3>Paris, France</h3>
+                            <p>Experience elegance and romance</p>
+                        </div>
+                    </article>
+
+                    <article class="destination-card">
+                        <div class="destination-image" style="background: url('https://images.unsplash.com/photo-1488747807830-63789f68bb65?w=500&h=300&fit=crop') center/cover no-repeat;"></div>
+                        <div class="destination-content">
+                            <h3>Tokyo, Japan</h3>
+                            <p>Blend of tradition and modernity</p>
+                        </div>
+                    </article>
+
+                    <article class="destination-card">
+                        <div class="destination-image" style="background: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&h=300&fit=crop') center/cover no-repeat;"></div>
+                        <div class="destination-content">
+                            <h3>Maldives</h3>
+                            <p>Tropical paradise awaits you</p>
+                        </div>
+                    </article>
+
+                    <article class="destination-card">
+                        <div class="destination-image" style="background: url('https://images.unsplash.com/photo-1512453475868-9f63a80cfbe4?w=500&h=300&fit=crop') center/cover no-repeat;"></div>
+                        <div class="destination-content">
+                            <h3>Dubai, UAE</h3>
+                            <p>Luxury shopping and modern design</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Footer About -->
+                <div class="footer-section">
+                    <h3>About Sharing Holidays</h3>
+                    <p>Your trusted partner in creating unforgettable travel experiences worldwide.</p>
+                    <div class="social-links" aria-label="Follow us on social media">
+                        <a href="#" aria-label="Facebook" title="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter" title="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram" title="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn" title="Follow us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Footer Services -->
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#flights">Flights</a></li>
+                        <li><a href="#hotels">Hotels</a></li>
+                        <li><a href="#visa">Visa Services</a></li>
+                        <li><a href="#packages">Holiday Packages</a></li>
+                    </ul>
+                </div>
+
+                <!-- Footer Destinations -->
+                <div class="footer-section">
+                    <h3>Destinations</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Europe</a></li>
+                        <li><a href="#">Asia</a></li>
+                        <li><a href="#">Africa</a></li>
+                        <li><a href="#">Americas</a></li>
+                    </ul>
+                </div>
+
+                <!-- Footer Contact -->
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links no-style">
+                        <li><i class="fas fa-phone" aria-hidden="true"></i> +92 333 1234567</li>
+                        <li><i class="fas fa-envelope" aria-hidden="true"></i> info@sharingholidays.com</li>
+                        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Karachi, Pakistan</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sharing Holidays. All rights reserved.</p>
+                <ul class="footer-bottom-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="floating-whatsapp" id="floatingWhatsapp">
+        <a href="https://wa.me/923331234567" target="_blank" rel="noopener noreferrer" title="Chat with us on WhatsApp" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            <span class="sr-only">WhatsApp Chat</span>
+        </a>
+    </div>
+
+    <!-- Responsive JavaScript -->
+    <script src="assets/js/script-responsive.js" defer></script>
+</body>
+</html>
